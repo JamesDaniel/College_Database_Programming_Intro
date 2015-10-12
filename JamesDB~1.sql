@@ -1,0 +1,54 @@
+SELECT *
+FROM EMP;
+
+SELECT *
+FROM EMP
+WHERE ENAME LIKE 'C%';
+
+SELECT *
+FROM EMP
+WHERE HIREDATE > '01-JAN-81' AND
+      DEPTNO = 20;
+      
+SELECT DISTINCT DEPT.DNAME, EMP.ENAME
+FROM EMP, DEPT
+WHERE EMP.DEPTNO = DEPT.DEPTNO;
+
+INSERT INTO EMP (EMPNO,ENAME)
+VALUES (5000,'Bart');
+
+-- can't add employee with existing employee number. keys should be unique.
+
+DELETE FROM EMP
+WHERE DEPTNO = 20;
+
+DELETE FROM DEPT
+WHERE DEPTNO = 20;
+--
+INSERT INTO EMP(empno, ename)
+VALUES (9001,'joe');
+
+INSERT INTO DEPT(DEPTNO)
+values (50);
+
+UPDATE EMP
+SET DEPTNO = 50
+where empno = 9001;
+--
+UPDATE EMP
+SET HIREDATE = '19-SEP-05'
+where empno = 7844;
+
+update emp
+set SAL = 10000
+where empno = 7844;
+--
+update dept
+set dname = 'PRODUCTION';
+
+UPDATE dept
+set loc = 'DUBLIN';
+--
+UPDATE EMP
+SET DEPTNO = 50
+WHERE ENAME = 'JOE';
